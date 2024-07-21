@@ -3,28 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-
         <link rel="icon" href="/favicon.png" />
-
-        <!-- prettier-ignore -->
-        <link rel="preload" href="/fonts/JetBrainsMono/JetBrainsMono[wght].woff2" as="font" type="font/woff2" crossorigin />
-
-        <style>
-            /* JetBrainsMono */
-            @font-face {
-                font-family: JetBrainsMono;
-                /* prettier-ignore */
-                src: url("/fonts/JetBrainsMono/JetBrainsMono[wght].woff2") format("woff2 supports variations"),
-					 url("/fonts/JetBrainsMono/JetBrainsMono[wght].woff2") format("woff2-variations");
-                font-weight: 100 800;
-            }
-        </style>
-
         %sveltekit.head%
     </head>
-    <body
-        class="min-h-screen select-none overflow-x-hidden bg-gray-900 not-italic text-gray-300"
-    >
+    <body>
         <div class="contents">%sveltekit.body%</div>
     </body>
 </html>
