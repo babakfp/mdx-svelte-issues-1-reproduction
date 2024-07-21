@@ -3,8 +3,5 @@
 /.vercel/
 /build/
 .DS_Store
-.env
-.env.*
-!.env.example
 vite.config.ts.timestamp-*
 pnpm-lock.yaml
