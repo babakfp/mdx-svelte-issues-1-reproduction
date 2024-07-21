@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --header-h: theme(spacing.16);
+        --screen-h-minus-header-h: calc(var(--tw-screen-h) - var(--header-h));
+        --main-spacing-t: theme(spacing.12);
+        --main-spacing-b: theme(spacing.20);
+    }
+    ::selection {
+        @apply bg-brand-600/60;
+    }
+    ::-webkit-scrollbar {
+        @apply h-2.5 w-2.5;
+        &-thumb {
+            @apply h-12 max-h-[40%] w-12 max-w-[40%] rounded-full border-4 border-solid border-transparent bg-gray-600 bg-clip-padding;
+        }
+    }
+    * {
+        @apply scroll-mt-[calc(var(--header-h)+theme(spacing.8))] drag-none;
+    }
+    b,
+    strong,
+    th {
+        @apply font-semibold;
+    }
+    hr {
+        @apply border-t-2 border-gray-50/25;
+    }
+    svg.icon {
+        @apply pointer-events-none inline-block h-[1em] w-[1em];
+        &:not([fill="none"]) {
+            @apply fill-current;
+        }
+    }
+    .font-title {
+        @apply font-black uppercase;
+    }
+}
+
+/* Outline */
+@layer base {
+    * {
+        @apply outline-none outline outline-2 focus-visible:outline-brand-400;
+    }
+    a {
+        @apply outline-dashed;
+    }
+}
+
+@layer components {
+    .main {
+        @apply container min-h-[var(--screen-h-minus-header-h)] pb-[--main-spacing-b] pt-[--main-spacing-t];
+    }
+}
+
+@layer components {
+    .header-btn {
+        @apply flex h-full items-center px-container outline-inset;
+    }
+    a.header-btn,
+    button.header-btn {
+        @apply duration-100 hover:bg-gray-50/10 hover:text-gray-50;
+    }
+}
+
+@layer components {
+    .link {
+        @apply break-words text-brand-300 underline decoration-transparent decoration-2 duration-75 hover:text-brand-100;
+    }
+}
+
+@layer components {
+    .inline-code {
+        @apply select-text rounded-md bg-gray-50/10 px-1.5 py-0.5 text-[.9em] selection:bg-brand-600/50;
+    }
+}
+
+@layer components {
+    .code-block {
+        @apply select-text rounded !bg-gray-50/5 p-0.5 text-sm font-semibold [tab-size:4] selection:bg-gray-50/10;
+
+        code {
+            @apply block overflow-x-auto p-6;
+        }
+
+        span {
+            @apply !not-italic;
+        }
+    }
+}
+
+@layer components {
+    .btn {
+        @apply relative inline-flex items-center justify-center gap-2 rounded bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-50 duration-100 drag-none highlight-gray-50/10 hover:bg-gray-700;
+    }
+    .btn-icon {
+        @apply h-9 w-9 p-0 text-gray-400 hover:text-gray-50;
+    }
+    .btn-primary {
+        @apply bg-brand-600 text-white hover:bg-brand-500;
+    }
+}
+
+@layer components {
+    .outline-inset {
+        @apply -outline-offset-2;
+    }
+}
+
+@layer components {
+    .article-content {
+        --markdown-spacing-base: theme(spacing.6);
+        --markdown-spacing-title: theme(spacing.10);
+
+        @apply space-y-[--markdown-spacing-base] leading-7;
+
+        /* prettier-ignore */
+        h1, h2, h3, h4, h5, h6 {
+            @apply break-words text-gray-50;
+            code {
+                @apply [text-transform:none];
+            }
+        }
+
+        /* prettier-ignore */
+        h2, h3, h4, h5, h6 {
+            @apply !my-[--markdown-spacing-title];
+        }
+
+        h1 {
+            @apply font-title mb-[--markdown-spacing-title] text-5xl sm:text-6xl;
+        }
+        h2 {
+            @apply text-3xl sm:text-4xl;
+        }
+        h3 {
+            @apply text-xl sm:text-2xl;
+        }
+        h4 {
+            @apply text-base sm:text-lg;
+        }
+        h5 {
+            @apply text-sm;
+        }
+
+        /* prettier-ignore */
+        h2, h3, h4, h5, h6 {
+            @apply relative [&:hover_.heading-permalink]:show;
+        }
+        .heading-permalink {
+            @apply text-[1em] delay-300 duration-300 hide;
+        }
+
+        p strong {
+            @apply font-bold underline decoration-double decoration-[1.6px] underline-offset-[6px];
+        }
+
+        a:not(.btn) {
+            @apply link;
+        }
+        hr {
+            @apply !my-8;
+        }
+
+        ul,
+        ol {
+            @apply list-inside space-y-2;
+            ul,
+            ol {
+                @apply ml-6;
+            }
+        }
+        ul {
+            @apply list-disc;
+        }
+        ol {
+            @apply list-decimal;
+        }
+        li {
+            @apply leading-6;
+
+            ul,
+            ol {
+                @apply my-4;
+            }
+
+            > p {
+                @apply inline;
+            }
+        }
+
+        img,
+        video {
+            @apply rounded;
+        }
+
+        img:not([inline]),
+        video {
+            @apply border-4 border-gray-50/5 bg-gray-50/5;
+        }
+
+        video {
+            @apply w-full;
+        }
+
+        blockquote {
+            @apply relative rounded bg-gray-400/5 p-4 shadow-sm shadow-gray-400/20;
+            blockquote {
+                @apply -mr-4 mt-[--markdown-spacing-base] sm:mr-0;
+            }
+        }
+
+        code:not(pre code) {
+            @apply inline-code;
+        }
+        pre {
+            @apply code-block -mx-container rounded-none sm:mx-0 sm:rounded;
+
+            code {
+                @apply px-container leading-8;
+
+                /* counter-reset: step;
+                counter-increment: step 0;
+
+                .line::before {
+                    content: counter(step);
+                    counter-increment: step;
+                    width: 1rem;
+                    margin-right: 1.5rem;
+                    display: inline-block;
+                    text-align: right;
+                    color: rgba(115, 138, 148, 0.4);
+                } */
+            }
+        }
+
+        .remark-github-alerts {
+            @apply border-l-3 pl-6 pt-4;
+
+            .remark-github-alerts-title {
+                @apply mb-4;
+
+                svg {
+                    @apply text-xl;
+                }
+            }
+        }
+    }
+}
+
+.toaster {
+    .base {
+        @apply !bg-gray-800 !pl-4 !highlight-gray-50/10;
+    }
+    .message {
+        @apply text-sm !text-gray-300;
+    }
+}

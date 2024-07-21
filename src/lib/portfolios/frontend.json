@@ -1,0 +1,67 @@
+[
+    {
+        "title": "Angle Berry",
+        "slug": "angle-berry",
+        "description": "Angle Berry is a website for sharing premium videos. Users can pay or invite others to get access to the content. They can also chat in real-time with each other.",
+        "poster": "/images/portfolios/frontend/frame/angle-berry.webp",
+        "urls": {
+            "main": "https://angle-berry.vercel.app/login?username=user&password=useruser",
+            "github": "https://github.com/babakfp/angle-berry-client"
+        },
+        "gallery": [
+            "/content/portfolios/angle-berry/gallery-1.png",
+            "/content/portfolios/angle-berry/gallery-2.png",
+            "/content/portfolios/angle-berry/gallery-3.png",
+            "/content/portfolios/angle-berry/gallery-4.png",
+            "/content/portfolios/angle-berry/gallery-5.png"
+        ],
+        "technologies": ["Svelte", "TailwindCSS", "PocketBase", "TypeScript"]
+    },
+    {
+        "title": "FarsGamer Remastered",
+        "slug": "farsgamer-remastered",
+        "description": "In-Game Offers Store",
+        "poster": "/images/portfolios/frontend/frame/farsgamer-remastered.webp",
+        "urls": {
+            "main": "https://farsgamer.vercel.app"
+        },
+        "gallery": [
+            "/content/portfolios/farsgamer-remastered/gallery-1.png",
+            "/content/portfolios/farsgamer-remastered/gallery-2.png",
+            "/content/portfolios/farsgamer-remastered/gallery-3.png",
+            "/content/portfolios/farsgamer-remastered/gallery-4.png"
+        ],
+        "technologies": ["Svelte", "TailwindCSS"]
+    },
+    {
+        "title": "FarsGamer",
+        "slug": "farsgamer",
+        "description": "In-Game Offers Store",
+        "poster": "/images/portfolios/frontend/frame/farsgamer.webp",
+        "urls": {
+            "main": "https://farsgamer.com"
+        },
+        "technologies": ["TailwindCSS", "Sass"]
+    },
+    {
+        "title": "TarVaPood",
+        "slug": "tarvapood",
+        "description": "Handcrafted Carpets Store",
+        "poster": "/images/portfolios/frontend/frame/tarvapood.webp",
+        "urls": {
+            "main": "https://tarvapood.onrender.com"
+        },
+        "technologies": ["TailwindCSS", "Sass"]
+    },
+    {
+        "title": "IDPay",
+        "slug": "idpay",
+        "description": "Online Payment Site",
+        "poster": "/images/portfolios/frontend/frame/idpay.webp",
+        "urls": {
+            "main": "https://idpay.vercel.app",
+            "github": "https://github.com/babakfp/idpay"
+        },
+        "technologies": ["Svelte", "TailwindCSS"]
+    }
+]
