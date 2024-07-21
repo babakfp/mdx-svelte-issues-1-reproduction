@@ -7,47 +7,9 @@
         <link rel="icon" href="/favicon.png" />
 
         <!-- prettier-ignore -->
-        <link rel="preload" href="/fonts/TitilliumWeb/TitilliumWeb-Regular.woff2" as="font" type="font/woff2" crossorigin />
-        <!-- prettier-ignore -->
-        <link rel="preload" href="/fonts/TitilliumWeb/TitilliumWeb-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
-        <!-- prettier-ignore -->
-        <link rel="preload" href="/fonts/TitilliumWeb/TitilliumWeb-Bold.woff2" as="font" type="font/woff2" crossorigin />
-        <!-- prettier-ignore -->
-        <link rel="preload" href="/fonts/TitilliumWeb/TitilliumWeb-Black.woff2" as="font" type="font/woff2" crossorigin />
-
-        <!-- prettier-ignore -->
         <link rel="preload" href="/fonts/JetBrainsMono/JetBrainsMono[wght].woff2" as="font" type="font/woff2" crossorigin />
 
         <style>
-            /* TitilliumWeb */
-            @font-face {
-                font-family: "TitilliumWeb";
-                /* prettier-ignore */
-                src: url("/fonts/TitilliumWeb/TitilliumWeb-Regular.woff2") format("woff2");
-                font-weight: 400;
-                font-display: block;
-            }
-            @font-face {
-                font-family: "TitilliumWeb";
-                /* prettier-ignore */
-                src: url("/fonts/TitilliumWeb/TitilliumWeb-SemiBold.woff2") format("woff2");
-                font-weight: 600;
-                font-display: block;
-            }
-            @font-face {
-                font-family: "TitilliumWeb";
-                /* prettier-ignore */
-                src: url("/fonts/TitilliumWeb/TitilliumWeb-Bold.woff2") format("woff2");
-                font-weight: 700;
-                font-display: block;
-            }
-            @font-face {
-                font-family: "TitilliumWeb";
-                /* prettier-ignore */
-                src: url("/fonts/TitilliumWeb/TitilliumWeb-Black.woff2") format("woff2");
-                font-weight: 900;
-                font-display: block;
-            }
             /* JetBrainsMono */
             @font-face {
                 font-family: JetBrainsMono;
@@ -61,9 +23,7 @@
         %sveltekit.head%
     </head>
     <body
-        id="body"
         class="min-h-screen select-none overflow-x-hidden bg-gray-900 not-italic text-gray-300"
-        data-sveltekit-preload-data="hover"
     >
         <div class="contents">%sveltekit.body%</div>
     </body>
